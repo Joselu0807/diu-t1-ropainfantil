@@ -71,4 +71,53 @@ Después de hablar con los padres, ver a mi familia pelearse con el móvil y pro
 4. **Los formularios largos agobian a la gente mayor:** A una persona mayor le pones tres pantallas pidiéndole datos raros o códigos que no entiende y piensa que le van a estafar.
    * *Nuestra solución:* El proceso de pago tiene que ser directo al grano . Si se equivoca en un número, el campo se marca claramente y le dice en su idiomaqué ha fallado, sin tecnicismos.
 
+## 3. Cómo organizamos la tienda y cómo se pasa de una pantalla a otra
+
+### 3.1 La idea detrás de la navegación
+Al pensar cómo estructurar la app, lo primero que tuve claro es que no queríamos menús raros ni botones escondidos. Si una madre va con prisa o un abuelo no domina mucho el móvil, meter las cosas dentro de un menú lateral de tres rayas es una trampa. 
+
+Por eso dejamos una barra fija abajo del todo con lo básico: Inicio, la Cesta y el Perfil. Así el usuario siempre tiene a golpe de pulgar el camino para volver a donde estaba. El proceso de compra lo planteamos recto y sin rodeos: entras, buscas por edad, abres la prenda, confirmas la talla en centímetros para no equivocarte, la echas a la cesta, metes los datos justos de envío/pago y listo. En ningún momento dejamos al usuario en un callejón sin salida; siempre hay una flecha clara para tirar hacia atrás o cancelar sin perder lo que ya tenías seleccionado.
+
+### 3.2 El mapa de navegación (Diagrama Mermaid)
+
+```mermaid
+graph TD
+    %% Barra inferior siempre a mano
+    Inicio[1. Portada / Novedades por edad] -->|Pulsa en una edad| Catalogo[2. Listado de ropa]
+    Inicio -->|Toca el icono de la cesta| Carrito[4. Tu compra / Cesta]
+    Inicio -->|Toca perfil| Perfil[7. Guardados y mis datos]
+
+    %% Viendo ropa y mirando tallas
+    Catalogo -->|Toca una prenda| Ficha[3. Detalle de la prenda]
+    Catalogo -->|Flecha atrás| Inicio
+    
+    Ficha -->|Botón 'Ver medidas'| Tallas[Ventana rápida: Medidas en cm]
+    Tallas -->|Cerrar ventana| Ficha
+    Ficha -->|Botón 'Añadir a la cesta'| Carrito
+    Ficha -->|Flecha atrás| Catalogo
+
+    %% El momento de pagar
+    Carrito -->|Botón 'Pagar pedido'| Pago[5. Pantalla de pago y envío]
+    Carrito -->|Seguir mirando ropa| Catalogo
+    Carrito -->|Si borras algo sin querer| Deshacer[Cartelito abajo: Deshacer]
+    Deshacer -->|Recuperar prenda| Carrito
+
+    Pago -->|Confirmar compra| Exito[6. Pedido completado]
+    Pago -->|Volver a revisar la cesta| Carrito
+
+    %% Pantalla final
+    Exito -->|Volver a la tienda| Inicio
+    Exito -->|Ver seguimiento| Perfil
+```
+
+### 3.3 Qué va en cada una de las 7 pantallas obligatorias
+
+1. **Portada (Inicio):** Nada más abrir la app ves los accesos rápidos según los años del crío (Bebé, 2 a 6 años, etc.) y un par de fotos grandes con lo más vendido para no saturar con mil banners.
+2. **Listado de ropa (Catálogo):** Los productos colocados en dos columnas limpias. Fotos que se vean bien, el precio claro en negrita y filtros rápidos arriba para no tragarte prendas que no son de la talla que buscas.
+3. **Detalle de la prenda (Ficha):** Fotos grandes que se pueden pasar deslizando el dedo, selector de tallas y lo más importante: el botón para abrir las medidas en centímetros sin cambiar de pantalla. Abajo del todo, fijo, el botón de añadir a la cesta.
+4. **Cesta (Carrito):** Se ve claro lo que llevas metido, la talla elegida y el precio final con el envío ya sumado (sin sorpresas de última hora). Si le das a borrar a algo por error, sale un aviso rápido para recuperarlo con un toque.
+5. **Pantalla de pago (Checkout):** Un formulario corto y espaciado para la dirección y la tarjeta o Bizum. Si metes un número mal, la casilla se pone en rojo y te avisa al momento, sin esperar a que le des a enviar.
+6. **Pedido completado:** Pantalla limpia que te confirma que el cobro está bien hecho, te deja tu número de pedido y un botón grande para volver a la portada tranquilamente.
+7. **Guardados y mis datos (Perfil):** Para tener a mano las cosas que te han gustado pero que no vas a comprar hoy, y ver por dónde va el paquete que acabas de pedir.
+
 Palabra del día: 29
