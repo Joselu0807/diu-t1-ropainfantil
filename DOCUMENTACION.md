@@ -120,4 +120,24 @@ graph TD
 6. **Pedido completado:** Pantalla limpia que te confirma que el cobro está bien hecho, te deja tu número de pedido y un botón grande para volver a la portada tranquilamente.
 7. **Guardados y mis datos (Perfil):** Para tener a mano las cosas que te han gustado pero que no vas a comprar hoy, y ver por dónde va el paquete que acabas de pedir.
 
+## 4. Bocetos preliminares y decisiones de diseño (Wireframes)
+
+### 4.1 En qué me fijé antes de ponerme a dibujar pantallas
+Antes de meterme a Figma a meter colores, fotos o tipografías definitivas, me puse a plantear la estructura básica de las pantallas en blanco y negro (wireframes). Lo hice con tres cosas muy claras en la cabeza para que la app no fuera un suplicio de usar:
+
+* **Pensar en cómo se coge el móvil de verdad:** Cuando un padre o una madre está con el crío, casi nunca tiene las dos manos libres. Suele estar sujetando al niño, una bolsa o de pie en el bus con una sola mano. Por eso, todo lo que consideré obligatorio de pulsar lo coloqué abajo del todo, donde el pulgar llega sin estirar la mano ni hacer equilibrios con el teléfono.
+* **Botones que se puedan pulsar a la primera:** Me da mucha rabia intentar darle a una talla o a un botón y pulsar el de al lado sin querer. Diseñé todos los elementos interactivos con un tamaño generoso y bien separados para que ni las personas mayores con menos pulso ni nadie con prisas se equivoque de botón.
+* **No apretujar las cosas en pantalla:** En muchas tiendas online te meten diez productos por fila, y mil textos diminutos. Yo preferí dejar aire, que los márgenes se noten limpios y que cada prenda tenga su espacio para verse bien sin saturar.
+
+### 4.2 Los componentes de Material 3 que metí y por qué
+Para que la interfaz resultara familiar y no pareciese un invento raro, aproveché los componentes estándar de Material 3 que cualquiera que use Android ya reconoce sin pensar:
+
+1. **La barra de abajo (Navigation Bar):** La dejé siempre visible en la base con tres accesos directos: Inicio, Cesta y Perfil. A cada icono le puse su palabra debajo escrita en grande para que personas mayores no tenga que descifrar qué significa cada dibujo.
+2. **Los filtros rápidos tipo pastilla (Filter Chips):** En el catálogo, en vez de obligar al usuario a entrar a un menú desplegable eterno para filtrar, metí cuadritos horizontales arriba . Le das un toque con el dedo y se filtra la lista al momento.
+3. **La hoja de tallas desde abajo (Bottom Sheet):** Para la guía de tallas no quería que el usuario saliera de la prenda a otra web. Al darle a "Ver medidas" decidí levantar una pequeña ventana desde el borde inferior de la pantalla con los centímetros de altura y pecho. Lo miras en dos segundos y la bajas deslizando con el dedo.
+4. **Campos de formulario que avisan al instante (Text Fields):** En el momento de pagar, si te dejas el código postal vacío o pones mal un número de tarjeta, la casilla se pone en rojo al instante y te explica abajo con palabras sencillas qué falta, sin tecnicismos raros ni dejándote la duda de por qué no avanza.
+5. **El aviso de deshacer borrado (Snackbar):** Si vas con prisas y le das por error a la papelera en la cesta, programé que salte un cartelito negro abajo durante unos segundos con la opción de "Deshacer". Así recuperas la ropa sin tener que volver a buscarla desde cero.
+
+### 4.3 Cómo dejé organizadas las pantallas en el lienzo
+En Figma coloqué las 7 pantallas obligatorias en fila de izquierda a derecha usando el tamaño estándar de pantalla móvil. De este modo, cualquiera que entre a revisar el archivo puede seguir el camino exacto que hace un comprador desde que entra a la portada hasta que le dan el número de pedido sin perderse.
 Palabra del día: 29
