@@ -78,36 +78,28 @@ Al pensar cómo estructurar la app, lo primero que tuve claro es que no queríam
 
 Por eso dejamos una barra fija abajo del todo con lo básico: Inicio, la Cesta y el Perfil. Así el usuario siempre tiene a golpe de pulgar el camino para volver a donde estaba. El proceso de compra lo planteamos recto y sin rodeos: entras, buscas por edad, abres la prenda, confirmas la talla en centímetros para no equivocarte, la echas a la cesta, metes los datos justos de envío/pago y listo. En ningún momento dejamos al usuario en un callejón sin salida; siempre hay una flecha clara para tirar hacia atrás o cancelar sin perder lo que ya tenías seleccionado.
 
-### 3.2 El mapa de navegación (Diagrama Mermaid)
-
 ```mermaid
 graph TD
-    %% Barra inferior siempre a mano
-    Inicio[1. Portada / Novedades por edad] -->|Pulsa en una edad| Catalogo[2. Listado de ropa]
-    Inicio -->|Toca el icono de la cesta| Carrito[4. Tu compra / Cesta]
-    Inicio -->|Toca perfil| Perfil[7. Guardados y mis datos]
+    %% Pantalla principal
+    Inicio[1. Inicio / Portada]
 
-    %% Viendo ropa y mirando tallas
-    Catalogo -->|Toca una prenda| Ficha[3. Detalle de la prenda]
-    Catalogo -->|Flecha atrás| Inicio
-    
-    Ficha -->|Botón 'Ver medidas'| Tallas[Ventana rápida: Medidas en cm]
-    Tallas -->|Cerrar ventana| Ficha
-    Ficha -->|Botón 'Añadir a la cesta'| Carrito
-    Ficha -->|Flecha atrás| Catalogo
+    %% Secciones accesibles desde la barra inferior
+    Inicio --> Catalogo[2. Catálogo de ropa]
+    Inicio --> Carrito[4. Cesta de la compra]
+    Inicio --> Perfil[7. Guardados y Mi cuenta]
 
-    %% El momento de pagar
-    Carrito -->|Botón 'Pagar pedido'| Pago[5. Pantalla de pago y envío]
-    Carrito -->|Seguir mirando ropa| Catalogo
-    Carrito -->|Si borras algo sin querer| Deshacer[Cartelito abajo: Deshacer]
-    Deshacer -->|Recuperar prenda| Carrito
+    %% Proceso de compra en línea recta
+    Catalogo --> Ficha[3. Ficha de la prenda]
+    Ficha -.-> Tallas[Medidas en cm - Modal]
+    Ficha --> Carrito
 
-    Pago -->|Confirmar compra| Exito[6. Pedido completado]
-    Pago -->|Volver a revisar la cesta| Carrito
+    %% Tramitación del pedido
+    Carrito -.-> Deshacer[Aviso: Deshacer borrado]
+    Carrito --> Checkout[5. Datos de envío y pago]
+    Checkout --> Exito[6. Pedido confirmado]
 
-    %% Pantalla final
-    Exito -->|Volver a la tienda| Inicio
-    Exito -->|Ver seguimiento| Perfil
+    %% Vuelta al flujo
+    Exito --> Inicio
 ```
 
 ### 3.3 Qué va en cada una de las 7 pantallas obligatorias
