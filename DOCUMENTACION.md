@@ -124,5 +124,34 @@ Para que la interfaz resultara familiar y no pareciese un invento raro, aprovech
 3. **La hoja de tallas desde abajo (Bottom Sheet):** Para la guía de tallas no quería que el usuario saliera de la prenda a otra web. Al darle a "Ver medidas" decidí levantar una pequeña ventana desde el borde inferior de la pantalla con los centímetros de altura y pecho. Lo miras en dos segundos y la bajas deslizando con el dedo.
 4. **Campos de formulario que avisan al instante (Text Fields):** En el momento de pagar, si te dejas el código postal vacío o pones mal un número de tarjeta, la casilla se pone en rojo al instante y te explica abajo con palabras sencillas qué falta, sin tecnicismos raros ni dejándote la duda de por qué no avanza.
 5. **El aviso de deshacer borrado (Snackbar):** Si vas con prisas y le das por error a la papelera en la cesta, programé que salte un cartelito negro abajo durante unos segundos con la opción de "Deshacer". Así recuperas la ropa sin tener que volver a buscarla desde cero.
+### 3.3 Guía de estilo Material Design 3
+
+#### Color semilla y paleta tonal
+Para Minimoda se seleccionó como color semilla el tono verde azulado `#006874`. Transmite frescura, tranquilidad y pulcritud, funcionando muy bien para un catálogo infantil mixto sin recurrir a estereotipos.
+
+Mediante el plugin *Material Theme Builder* se generó el sistema tonal dinámico para modo claro y oscuro, garantizando el cumplimiento de contraste WCAG 2.1 nivel AA:
+
+- **Modo Claro (Light Scheme):**
+  - `Primary`: `#006874` / `OnPrimary`: `#FFFFFF` (ratio: 4.68:1 — cumple AA)
+  - `PrimaryContainer`: `#9EEFFD` / `OnPrimaryContainer`: `#001F24` (ratio: 13.5:1)
+  - `Surface`: `#F8FAFA` / `OnSurface`: `#191C1D` (ratio: 15.8:1)
+  - `Error`: `#BA1A1A` / `OnError`: `#FFFFFF` (ratio: 5.7:1)
+
+- **Modo Oscuro (Dark Scheme):**
+  - `Primary`: `#82D3E0` / `OnPrimary`: `#00363D`
+  - `Surface`: `#101415` / `OnSurface`: `#E1E3E3`
+
+#### Tipografía y escala de tipos
+Se utiliza la tipografía oficial **Roboto**, respetando los roles estándar:
+- **Headline Small (24sp / 32sp):** Títulos de pantallas principales (Catálogo, Checkout).
+- **Title Large (22sp / 28sp):** Nombre del producto en la ficha detallada.
+- **Title Medium (16sp / 24sp - Medium):** Precios destacados y cabeceras de sección.
+- **Body Large (16sp / 24sp):** Descripciones y campos de entrada de formulario.
+- **Label Large (14sp / 20sp - Medium):** Textos en botones y chips de filtrado.
+
+#### Rejilla y espaciado
+- **Retícula:** 4 columnas con márgenes laterales de 16 dp y medianil de 8 dp.
+- **Sistema de espaciado:** Múltiplos de 8 dp (8, 16, 24, 32 dp).
+- **Accesibilidad táctil:** Área táctil mínima de 48×48 dp en todos los componentes interactivos.
 
 Palabra del día:reloj

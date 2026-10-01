@@ -1,0 +1,65 @@
+{
+  "propietario": "Joselu0807",
+  "tienda": "Minimoda",
+  "colorSemilla": "#006874",
+  "esquema": {
+    "claro": {
+      "primary": "#006874",
+      "onPrimary": "#FFFFFF",
+      "primaryContainer": "#9EEFFD",
+      "onPrimaryContainer": "#001F24",
+      "secondary": "#4A6267",
+      "onSecondary": "#FFFFFF",
+      "tertiary": "#525E7D",
+      "onTertiary": "#FFFFFF",
+      "surface": "#F8FAFA",
+      "onSurface": "#191C1D",
+      "error": "#BA1A1A",
+      "onError": "#FFFFFF"
+    },
+    "oscuro": {
+      "primary": "#82D3E0",
+      "onPrimary": "#00363D",
+      "primaryContainer": "#004F58",
+      "onPrimaryContainer": "#9EEFFD",
+      "secondary": "#B1CBD0",
+      "onSecondary": "#1C3438",
+      "tertiary": "#BAC6EA",
+      "onTertiary": "#24304D",
+      "surface": "#101415",
+      "onSurface": "#E1E3E3",
+      "error": "#FFB4AB",
+      "onError": "#690005"
+    }
+  },
+  "tipografia": {
+    "familia": "Roboto",
+    "roles": {
+      "headlineSmall": { "tamano": 24, "interlineado": 32, "peso": 400 },
+      "titleLarge": { "tamano": 22, "interlineado": 28, "peso": 400 },
+      "titleMedium": { "tamano": 16, "interlineado": 24, "peso": 500 },
+      "bodyLarge": { "tamano": 16, "interlineado": 24, "peso": 400 },
+      "labelLarge": { "tamano": 14, "interlineado": 20, "peso": 500 }
+    }
+  },
+  "espaciado": {
+    "base": 8,
+    "margenPantalla": 16,
+    "columnas": 4,
+    "areaTactilMinima": 48
+  },
+  "componentes": [
+    "Top app bar",
+    "Navigation bar",
+    "Card",
+    "Filter chip",
+    "Button",
+    "Text field",
+    "Snackbar",
+    "Bottom sheet"
+  ],
+  "componentesPropios": [
+    { "nombre": "TarjetaProducto", "variantes": ["normal", "favorito", "agotado"] },
+    { "nombre": "SelectorTalla", "variantes": ["disponible", "seleccionada", "sin stock"] }
+  ]
+}
