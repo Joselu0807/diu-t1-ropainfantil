@@ -154,4 +154,54 @@ Se utiliza la tipografía oficial **Roboto**, respetando los roles estándar:
 - **Sistema de espaciado:** Múltiplos de 8 dp (8, 16, 24, 32 dp).
 - **Accesibilidad táctil:** Área táctil mínima de 48×48 dp en todos los componentes interactivos.
 
+
+### 3.4 Prototipo de alta fidelidad
+A partir de la estructura validada en los wireframes y aplicando los tokens de diseño generados para Material Design 3, se implementó el prototipo interactivo final a escala de dispositivo móvil compacto en una página independiente de Figma (*Prototipo*).
+
+#### Decisiones visuales y componentes aplicados
+- **Jerarquía y coherencia visual:** Se utilizó la paleta tonal basada en el color semilla `#006874`. Las llamadas a la acción principales (*CTA*) destacan en color `Primary` asegurando una ratio de contraste superior a 4.5:1.
+- **Microinteracciones y modales:** La guía de tallas se implementó como un *Bottom Sheet* desplegable desde el borde inferior para no perder el contexto de la prenda. La barra de navegación inferior (*Navigation Bar*) mantiene el indicador visual de sección activa en todo momento.
+- **Tratamiento de errores y confianza en el pago:** En la pantalla de checkout se diseñaron estados de error semántico explícitos en color `#BA1A1A` con mensajes directos en lenguaje natural, facilitando la corrección inmediata de datos erróneos.
+- **Flujo interactivo continuo:** El prototipo enlaza sin interrupciones desde la exploración en portada hasta la pantalla final de confirmación, permitiendo simular una experiencia de compra real a una mano.
+
+## 4. Validación y pruebas
+
+### 4.1 Metodología
+Para verificar la usabilidad y comprobar si se cumplían los objetivos iniciales, se organizaron pruebas cualitativas con 2 participantes representativos de los perfiles definidos:
+- **Participante 1 (Perfil Joven / Reposición):** Realizó la prueba usando el móvil en movimiento con una sola mano.
+- **Participante 2 (Perfil Sénior / Regalo):** Realizó la prueba prestando especial atención a la legibilidad y claridad del proceso de pago.
+
+**Tareas evaluadas:**
+1. Encontrar una prenda infantil y localizar sus medidas exactas en centímetros.
+2. Añadir la prenda a la cesta y avanzar hacia la tramitación del pedido.
+3. Completar el formulario de pago identificando y corrigiendo un error simulado.
+
+### 4.2 Resultados
+- **Tiempo de completado:** Ambos usuarios finalizaron el flujo principal de compra en menos de 2 minutos (media de 1 minuto y 35 segundos), cumpliendo el objetivo 1.
+- **Comprensión del tallaje:** La consulta de medidas en centímetros mediante la ventana modal inferior (*Bottom Sheet*) resolvió las dudas de talla sin necesidad de abandonar la ficha del producto, cumpliendo el objetivo 2.
+- **Recuperación ante fallos:** El aviso visual inmediato en los campos de formulario del checkout permitió subsanar los datos sin bloqueos en el flujo, cumpliendo el objetivo 3.
+
+### 4.3 Iteraciones y mejoras
+A partir de las observaciones de las pruebas se aplicaron dos ajustes:
+1. **Aumento del contraste en selectores de talla:** Se incrementó el grosor del borde en los chips de talla para que el usuario sénior identificara la selección con menor esfuerzo visual.
+2. **Claridad en el botón de retroceso:** Se reforzó el área táctil del icono de flecha atrás en la cabecera (*Top App Bar*) para garantizar una pulsación cómoda a una mano.
+
+## 5. Entrega y documentación final
+
+### 5.1 Justificación del diseño propuesto
+La interfaz de Minimoda da respuesta directa a las necesidades detectadas durante la investigación inicial:
+- **Accesibilidad y diseño ergonómico:** La concentración de acciones clave en la zona inferior de la pantalla favorece el uso con una sola mano, adaptándose a situaciones cotidianas de compra rápida.
+- **Prevención de devoluciones:** El acceso directo a las medidas corporales en centímetros dentro de la propia ficha reduce la incertidumbre de talla habitual en la ropa infantil.
+- **Simplicidad en la conversión:** La estructura lineal de la cesta y el checkout, combinada con componentes estándar de Material 3, reduce la carga cognitiva y transmite seguridad a perfiles no técnicos.
+
+### 5.2 Recomendaciones y pasos a seguir
+1. **Fase de desarrollo nativo:** Implementar la interfaz en Jetpack Compose utilizando Material Design 3 y consumiendo los tokens definidos en `diseno/estilos.json`.
+2. **Ampliación de accesibilidad:** Integrar compatibilidad completa con lectores de pantalla (*TalkBack*) añadiendo descripciones de contenido específicas en imágenes y estados de stock.
+3. **Optimización del pago:** Incorporar pasarelas de pago rápido en un solo toque (Google Pay) para reducir aún más la fricción en el checkout.
+
+## 6. Referencias bibliográficas
+- Material Design 3: *Components, Foundation and Color System*. Material.io / Google.
+- W3C: *Web Content Accessibility Guidelines (WCAG) 2.1*. World Wide Web Consortium.
+- Norman, D.: *The Design of Everyday Things*. Basic Books.
+
 Palabra del día:reloj
